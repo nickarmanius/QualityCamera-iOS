@@ -34,7 +34,8 @@ jobs:
                    CODE_SIGN_IDENTITY="" \
                    CODE_SIGNING_REQUIRED="NO" \
                    CODE_SIGNING_ALLOWED="NO" \
-                   archive
+                   archive \
+                   | xcpretty || xcodebuild -project QualityCamera.xcodeproj -scheme QualityCamera -sdk iphoneos -configuration Release -archivePath build/QualityCamera.xcarchive CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED="NO" CODE_SIGNING_ALLOWED="NO" archive
 
     - name: Export IPA
       run: |
