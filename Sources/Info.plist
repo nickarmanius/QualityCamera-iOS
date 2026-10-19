@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
     <key>CFBundleIdentifier</key>
-    <string>com.qualitycamera.app</string>
+   <string>com.qualitycamera.QualityCamera</string>
     <key>CFBundleName</key>
     <string>Quality Camera</string>
     <key>CFBundleShortVersionString</key>
