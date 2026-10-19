@@ -5,7 +5,8 @@ A lightweight, single-shutter iOS camera application built with Swift and AVFoun
 ## Features
 - **Single Shutter Capture:** Clean viewfinder preview and direct shutter trigger.
 - **Megapixel (MP) Quality Presets:** Downscales captures precisely to standard resolution tiers (8MP, 5MP, 3MP, 1MP, 0.3MP).
-- **Files App Export:** Save processed images directly to local app storage accessible via the iOS Files app.
+- **Files App Export:** Photos are saved to On My iPhone > Quality Camera in the Files app.
+- **Live viewfinder, front/back camera switch, camera permission handling.**
 
 ## Project Structure
 - `Sources/CameraManager.swift`: Manages the AVFoundation capture session and photo output.

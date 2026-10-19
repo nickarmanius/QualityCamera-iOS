@@ -8,7 +8,11 @@ targets:
     deploymentTarget: "16.0"
     sources: [Sources]
     settings:
-      INFOPLIST_FILE: Sources/Info.plist # (or auto-generated if using default SwiftUI entry)
+      INFOPLIST_FILE: Sources/Info.plist
+      PRODUCT_BUNDLE_IDENTIFIER: com.qualitycamera.QualityCamera
+      PRODUCT_NAME: QualityCamera
+      SWIFT_VERSION: "5.0"
+      TARGETED_DEVICE_FAMILY: "1"
       CODE_SIGN_IDENTITY: ""
       CODE_SIGNING_REQUIRED: "NO"
       CODE_SIGNING_ALLOWED: "NO"
