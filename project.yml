@@ -1,0 +1,14 @@
+name: QualityCamera
+options:
+  bundleIdPrefix: com.qualitycamera
+targets:
+  QualityCamera:
+    type: application
+    platform: iOS
+    deploymentTarget: "16.0"
+    sources: [Sources]
+    settings:
+      INFOPLIST_FILE: Sources/Info.plist # (or auto-generated if using default SwiftUI entry)
+      CODE_SIGN_IDENTITY: ""
+      CODE_SIGNING_REQUIRED: "NO"
+      CODE_SIGNING_ALLOWED: "NO"
