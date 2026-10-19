@@ -34,13 +34,13 @@ jobs:
                    CODE_SIGN_IDENTITY="" \
                    CODE_SIGNING_REQUIRED="NO" \
                    CODE_SIGNING_ALLOWED="NO" \
-                   archive \
-                   | xcpretty || xcodebuild -project QualityCamera.xcodeproj -scheme QualityCamera -sdk iphoneos -configuration Release -archivePath build/QualityCamera.xcarchive CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED="NO" CODE_SIGNING_ALLOWED="NO" archive
+                   archive
 
     - name: Export IPA
       run: |
         mkdir -p build/Payload
-        cp -r build/QualityCamera.xcarchive/Products/Applications/QualityCamera.app build/Payload/
+        # Automatically copy whichever app bundle was generated inside the archive
+        cp -r build/QualityCamera.xcarchive/Products/Applications/*.app build/Payload/
         cd build
         zip -r QualityCamera.ipa Payload
 
