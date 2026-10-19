@@ -1,21 +1,17 @@
 import Foundation
 
-public struct FileExporter {
-    
-    /// Saves image data directly to the local app Documents directory (accessible via Files app).
-    /// - Parameters:
-    ///   - data: Image data.
-    ///   - fileName: Desired file name (e.g., "Photo_5MP.jpg").
-    /// - Returns: URL of the saved file if successful.
-    public static func saveToDocuments(data: Data, fileName: String) -> URL? {
-        guard let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
+struct FileExporter {
+
+    /// Saves image data into the app's Documents folder (visible in the Files app:
+    /// On My iPhone > Quality Camera).
+    static func saveToDocuments(data: Data, fileName: String) -> URL? {
+        guard let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
             return nil
         }
-        
-        let fileURL = documentsDirectory.appendingPathComponent(fileName)
+        let url = dir.appendingPathComponent(fileName)
         do {
-            try data.write(to: fileURL)
-            return fileURL
+            try data.write(to: url, options: .atomic)
+            return url
         } catch {
             print("Failed to save file: \(error.localizedDescription)")
             return nil
